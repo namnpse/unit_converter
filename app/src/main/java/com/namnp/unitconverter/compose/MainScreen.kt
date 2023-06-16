@@ -8,12 +8,14 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.namnp.unitconverter.ConverterViewModel
+import com.namnp.unitconverter.ConverterViewModelFactory
 import com.namnp.unitconverter.compose.converter.TopScreen
 
 @Composable
 fun MainScreen(
+    factory: ConverterViewModelFactory,
     modifier: Modifier = Modifier,
-    converterViewModel: ConverterViewModel = viewModel()
+    converterViewModel: ConverterViewModel = viewModel(factory = factory)
 ) {
 
     val list = converterViewModel.getConversions()
@@ -37,7 +39,7 @@ fun MainScreen(
                     converterViewModel.typedValue,
                     isLandscape
                 ) { message1, message2 ->
-
+                    converterViewModel.addResult(message1, message2)
                 }
             }
 
@@ -53,6 +55,7 @@ fun MainScreen(
                     converterViewModel.typedValue,
                     isLandscape
                 ) { message1, message2 ->
+                    converterViewModel.addResult(message1, message2)
                 }
             }
         }
