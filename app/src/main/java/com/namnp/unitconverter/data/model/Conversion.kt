@@ -1,4 +1,4 @@
-package com.namnp.unitconverter.data
+package com.namnp.unitconverter.data.model
 
 data class Conversion(
    val id : Int,

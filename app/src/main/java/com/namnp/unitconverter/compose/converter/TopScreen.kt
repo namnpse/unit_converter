@@ -5,7 +5,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import com.namnp.unitconverter.data.Conversion
+import com.namnp.unitconverter.data.model.Conversion
 import java.math.RoundingMode
 import java.text.DecimalFormat
 

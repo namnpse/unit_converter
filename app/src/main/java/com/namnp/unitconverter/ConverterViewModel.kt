@@ -3,7 +3,7 @@ package com.namnp.unitconverter
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.namnp.unitconverter.data.Conversion
+import com.namnp.unitconverter.data.model.Conversion
 
 class ConverterViewModel() : ViewModel() {
 
