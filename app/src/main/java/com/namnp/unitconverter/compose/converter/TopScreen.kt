@@ -53,6 +53,7 @@ fun TopScreen(
                 save(message1, message2)
                 toSave = false
             }
+            ResultBlock(message1 = message1, message2 = message2)
         }
     }
     }
