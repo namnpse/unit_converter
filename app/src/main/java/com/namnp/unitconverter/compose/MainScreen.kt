@@ -45,6 +45,12 @@ fun MainScreen(
                 }
                 HistoryScreen(
                     historyList,
+                    onCloseTask = { item ->
+                        converterViewModel.removeResult(item)
+                    },
+                    onClearAllTask = {
+                        converterViewModel.clearAll()
+                    }
                 )
             }
 
@@ -64,6 +70,12 @@ fun MainScreen(
                 }
                 HistoryScreen(
                     historyList,
+                    onCloseTask = { item ->
+                        converterViewModel.removeResult(item)
+                    },
+                    onClearAllTask = {
+                        converterViewModel.clearAll()
+                    }
                 )
             }
         }

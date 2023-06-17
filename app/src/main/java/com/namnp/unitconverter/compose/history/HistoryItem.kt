@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 fun HistoryItem(
     messagePart1: String,
     messagePart2: String,
+    onClose : () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -44,7 +45,7 @@ fun HistoryItem(
                 fontSize = 20.sp
             )
         }
-        IconButton(onClick = { }) {
+        IconButton(onClick = onClose) {
             Icon(Icons.Filled.Close, contentDescription = "close")
         }
     }

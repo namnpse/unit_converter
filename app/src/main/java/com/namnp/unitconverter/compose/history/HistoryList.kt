@@ -9,6 +9,7 @@ import com.namnp.unitconverter.data.model.ConversionResult
 @Composable
 fun HistoryList(
     list: State<List<ConversionResult>>,
+    onCloseTask : (ConversionResult) -> Unit,
 ) {
     LazyColumn {
         items(
@@ -18,6 +19,7 @@ fun HistoryList(
             HistoryItem(
                 messagePart1 = item.messagePart1,
                 messagePart2 = item.messagePart2,
+                onClose = { onCloseTask(item) }
             )
         }
     }

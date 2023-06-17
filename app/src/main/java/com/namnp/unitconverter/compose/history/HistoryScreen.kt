@@ -14,6 +14,8 @@ import com.namnp.unitconverter.data.model.ConversionResult
 @Composable
 fun HistoryScreen(
     list: State<List<ConversionResult>>,
+    onCloseTask : (ConversionResult) -> Unit,
+    onClearAllTask : () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column {
@@ -40,7 +42,9 @@ fun HistoryScreen(
         }
         HistoryList(
             list = list,
+            onCloseTask = { item ->
+                onCloseTask(item)
+            }
         )
     }
-
 }
