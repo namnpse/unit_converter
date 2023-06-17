@@ -10,6 +10,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.namnp.unitconverter.ConverterViewModel
 import com.namnp.unitconverter.ConverterViewModelFactory
 import com.namnp.unitconverter.compose.converter.TopScreen
+import com.namnp.unitconverter.compose.history.HistoryScreen
 
 @Composable
 fun MainScreen(
@@ -19,6 +20,7 @@ fun MainScreen(
 ) {
 
     val list = converterViewModel.getConversions()
+    val historyList = converterViewModel.resultList.collectAsState(initial = emptyList())
 
     val configuration = LocalConfiguration.current
     var isLandscape by remember { mutableStateOf(false) }
@@ -41,6 +43,9 @@ fun MainScreen(
                 ) { message1, message2 ->
                     converterViewModel.addResult(message1, message2)
                 }
+                HistoryScreen(
+                    historyList,
+                )
             }
 
         }
@@ -57,6 +62,9 @@ fun MainScreen(
                 ) { message1, message2 ->
                     converterViewModel.addResult(message1, message2)
                 }
+                HistoryScreen(
+                    historyList,
+                )
             }
         }
     }
